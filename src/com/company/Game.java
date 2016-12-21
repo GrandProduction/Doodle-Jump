@@ -1,9 +1,7 @@
 package com.company;
 
 import javax.swing.*;
-/**
- * Created by Дмитрий on 18.12.2016.
- */
+
 public class Game implements Runnable {
 
     private static KeyController keyController = new KeyController();
@@ -44,6 +42,7 @@ public class Game implements Runnable {
             update();
         }
         GameOver();
+        restart();
     }
     private void update() {
         doodle.setX(Move.movePlayer());
@@ -265,7 +264,23 @@ public class Game implements Runnable {
         return bluePlatform;
     }
     private static void restart() {
-
+        for(int i = 0; i < greenPlatform.getGreenPlatformArrayList().size(); i++)
+            greenPlatform.getGreenPlatformArrayList().remove(i);
+        for(int i = 0; i < bluePlatform.getBluePlatformArrayList().size(); i++)
+            bluePlatform.getBluePlatformArrayList().remove(i);
+        for(int i = 0; i < greyPlatform.getGreyPlatformArrayList().size(); i++)
+            greyPlatform.getGreyPlatformArrayList().remove(i);
+        for(int i = 0; i < monster.getMonsters().size(); i++)
+            monster.getMonsters().remove(i);
+        score.setScore(0);
+        doodle.setPositionX(250);
+        doodle.setPositionY(400);
+        doodle.setX(250);
+        doodle.setY(400);
+        doodle.setDoodleDown(true);
+        GravityTouchPlatform = false;
+        gameOver = false;
+        delta = 0;
         Game game = new Game();
     }
 }
