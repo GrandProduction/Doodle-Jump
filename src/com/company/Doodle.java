@@ -1,33 +1,32 @@
 package com.company;
 
-/**
- * Created by Дмитрий on 18.12.2016.
- */
 public class Doodle extends Person{
 
-    private  static KeyController keyController = new KeyController();
-    private static float delta = 0;
-    private static final float speed = 0.1f;
-    private int step = 15;
-
+    private static int lastY;
     private static boolean doodleDown = true;
-    private static boolean doodleStop = false;
-
-    private static int possionX = 250;
-    private static int possionY = 400;
+    private static int positionX = 250;
+    private static int positionY = 400;
 
     public Doodle(){
-        setYD(possionY);
-        setX(possionX);
+        setYD(positionY);
+        setX(positionX);
     }
 
-
-    public static int getPossionY() {
-        return possionY;
+    public static int getLastY() {
+        return lastY;
     }
 
-    public static void setPossionY(int possionY) {
-        Doodle.possionY = possionY;
+    public void setYD(int y) {
+        lastY = getY();
+        setY(y);
+    }
+
+    public static int getPositionY() {
+        return positionY;
+    }
+
+    public static void setPositionY(int positionY) {
+        Doodle.positionY = positionY;
     }
 
     public boolean isDoodleDown() {
@@ -38,16 +37,5 @@ public class Doodle extends Person{
         return doodleDown;
     }
 
-    public void setDoodleDown(boolean doodleDown) {
-        Doodle.doodleDown = doodleDown;
-    }
-
-    public static void setDoodleStop(boolean doodleStop) {
-        Doodle.doodleStop = doodleStop;
-    }
-
-    public static boolean isDoodleStop() {
-        return doodleStop;
-    }
 
 }

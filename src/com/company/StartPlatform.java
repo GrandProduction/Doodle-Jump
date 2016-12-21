@@ -8,31 +8,15 @@ import java.util.ArrayList;
 public class StartPlatform {
     private static final int quantity = 15;
 
-    private static ArrayList<Platform> platforms;
+    private static ArrayList<GreenPlatform>greenPlatformsArray = new ArrayList<GreenPlatform>();
 
-    public StartPlatform() {
-
-        platforms = new ArrayList<Platform>();
+    public GreenPlatform StartPlatform(GreenPlatform greenPlatform){
         for (int i = 0; i < quantity; i++){
-            Platform plat1 = randomPlatform();
-            platforms.add(plat1);
+            GreenPlatform greenPlatform1 = new GreenPlatform();
+            greenPlatformsArray.add(greenPlatform1.getGreenPlatformObject(542,625));
         }
+        greenPlatform.setGreenPlatformArrayList(greenPlatformsArray);
+        return greenPlatform;
     }
 
-    private Platform randomPlatform(){
-        int yp = (int) (Math.random() * 625);
-        int xp = (int) (Math.random() * 542);
-
-        Platform plat1 = new GreenPlatform(xp, yp, "p-green.png");
-        return plat1;
-    }
-
-
-    public static ArrayList<Platform> getPlatforms() {
-        return platforms;
-    }
-
-    public static void setPlatforms(ArrayList<Platform> platforms) {
-        StartPlatform.platforms = platforms;
-    }
 }

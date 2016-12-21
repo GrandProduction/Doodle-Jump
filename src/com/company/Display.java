@@ -8,8 +8,8 @@ import javax.swing.*;
 public class Display {
     private  static JFrame frame = new JFrame();
 
-    private static int width = 600;
-    private static int height = 600;
+    private static final int width = 600;
+    private static final int height = 600;
     private static String nameGame = "Doodle-Jump";
 
     public static void drawFrame() {
