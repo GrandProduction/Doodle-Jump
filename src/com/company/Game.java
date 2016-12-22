@@ -3,16 +3,15 @@ package com.company;
 import javax.swing.*;
 
 public class Game implements Runnable {
-
     private static KeyController keyController = new KeyController();
     private static Doodle doodle = new Doodle();
     private static Score score;
-    private static GreyPlatform greyPlatform = new GreyPlatform();
-    private static StartPlatform startPlatform = new StartPlatform();
     private static GreenPlatform greenPlatform;
+    private static GreyPlatform greyPlatform = new GreyPlatform();
     private static BluePlatform bluePlatform = new BluePlatform();
-    private static Thread gameThread;
+    private static StartPlatform startPlatform = new StartPlatform();
     private static Monster monster = new Monster();
+    private static Thread gameThread;
 
     private static int lvl = 0;
     private static int fallStep = 5;
@@ -91,19 +90,17 @@ public class Game implements Runnable {
     }
     private void deletePlatform() {
         for (int i = 0; i < greenPlatform.getGreenPlatformArrayList().size(); i++)
-            if (greenPlatform.getGreenPlatformArrayList().get(i).getY() > 616)
+            if (greenPlatform.getGreenPlatformArrayList().get(i).getY() > 601)
                 greenPlatform.getGreenPlatformArrayList().remove(i);
         for (int i = 0; i < bluePlatform.getBluePlatformArrayList().size(); i++)
-            if (bluePlatform.getBluePlatformArrayList().get(i).getY() > 616)
+            if (bluePlatform.getBluePlatformArrayList().get(i).getY() > 601)
                 bluePlatform.getBluePlatformArrayList().remove(i);
         for (int i = 0; i < greyPlatform.getGreyPlatformArrayList().size(); i++)
-            if (greyPlatform.getGreyPlatformArrayList().get(i).getY() > 616)
+            if (greyPlatform.getGreyPlatformArrayList().get(i).getY() > 601)
                 greyPlatform.getGreyPlatformArrayList().remove(i);
         for (int i = 0; i < monster.getMonsters().size(); i++)
             if (monster.getMonsters().get(i).getY() > 650)
                 monster.getMonsters().remove(i);
-
-
     }
     private static class Creator {
         static void createNewPlatform(int color) {
@@ -167,8 +164,8 @@ public class Game implements Runnable {
             if (keyController.isLeft())
                 x -= step;
             if (x > 600)
-                x = 0;
-            if (x < -20)
+                x = -60;
+            if (x < -60)
                 x = 600;
             return x;
         }
@@ -202,21 +199,21 @@ public class Game implements Runnable {
                 Creator.createNewPlatform(0);
             else
                 Creator.createNewPlatform(1);
-            if (randomChanceCreateMonster < 5)
+            if (randomChanceCreateMonster < 2)
                 Creator.createMonster();
         } else if (lvl == 2) {
             if (randomTemp < 2)
                 Creator.createNewPlatform(0);
             else
                 Creator.createNewPlatform(1);
-            if (randomChanceCreateMonster < 10)
+            if (randomChanceCreateMonster < 5)
                 Creator.createMonster();
         }else if (lvl == 3){
             if (randomTemp < 9)
                 Creator.createNewPlatform(1);
             else
                 Creator.createNewPlatform(2);
-            if (randomChanceCreateMonster < 15)
+            if (randomChanceCreateMonster < 8)
                 Creator.createMonster();
         }
     }

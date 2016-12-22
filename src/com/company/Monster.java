@@ -2,9 +2,6 @@ package com.company;
 
 import java.util.ArrayList;
 
-/**
- * Created by Дмитрий on 20.12.2016.
- */
 public class Monster extends Person{
 
     private static ArrayList<Monster> monsters = new ArrayList<Monster>();

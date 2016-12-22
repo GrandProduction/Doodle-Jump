@@ -2,9 +2,6 @@ package com.company;
 
 import java.util.ArrayList;
 
-/**
- * Created by Дмитрий on 19.12.2016.
- */
 public class BluePlatform extends Platform{
     private static ArrayList<BluePlatform> bluePlatformArrayList = new ArrayList<BluePlatform>();
     private static String name = "p-blue.png";

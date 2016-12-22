@@ -5,9 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-/**
- * Created by Дмитрий on 20.12.2016.
- */
 public class RecordInFile {
     private static final String nameFile = "Record.dat";
     private static final String newLine = "\n";

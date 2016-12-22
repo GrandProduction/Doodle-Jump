@@ -2,9 +2,6 @@ package com.company;
 
 import java.util.ArrayList;
 
-/**
- * Created by Дмитрий on 21.12.2016.
- */
 public class GreyPlatform extends BluePlatform{
     private static ArrayList<GreyPlatform> greyPlatformArrayList = new ArrayList<GreyPlatform>();
     private static String name = "p-grey.png";

@@ -2,9 +2,6 @@ package com.company;
 
 import java.util.ArrayList;
 
-/**
- * Created by Дмитрий on 19.12.2016.
- */
 public class GreenPlatform extends Platform {
     private static ArrayList<GreenPlatform> greenPlatformArrayList = new ArrayList<GreenPlatform>();
     private static String name = "p-green.png";

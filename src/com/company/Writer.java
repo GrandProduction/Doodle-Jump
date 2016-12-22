@@ -3,9 +3,6 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by Дмитрий on 18.12.2016.
- */
 public class Writer extends JComponent {
     private Doodle doodle = Game.doodleObj();
     private Score score = Game.getScore();
@@ -42,7 +39,6 @@ public class Writer extends JComponent {
                     , Monster.getMonsters().get(i).getX()
                     , Monster.getMonsters().get(i).getY()
                     , this);
-
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.BOLD, 20));
         g.drawString("Score: " + score.getScore(), 10, 40);

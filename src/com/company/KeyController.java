@@ -3,9 +3,6 @@ package com.company;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-/**
- * Created by Дмитрий on 18.12.2016.
- */
 public class KeyController extends KeyAdapter {
 
     private static boolean right = false;

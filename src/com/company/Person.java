@@ -21,7 +21,4 @@ public abstract class Person {
         this.y = y;
     }
 
-
-
-
 }

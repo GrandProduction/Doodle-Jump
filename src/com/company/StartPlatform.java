@@ -2,9 +2,6 @@ package com.company;
 
 import java.util.ArrayList;
 
-/**
- * Created by Дмитрий on 18.12.2016.
- */
 public class StartPlatform {
     private static final int quantity = 15;
 
